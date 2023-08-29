@@ -1,0 +1,3 @@
+# blogging-platform
+Fully functional personal blogging platform
+- Documentation coming soon...
