@@ -48,12 +48,17 @@ URL: https://flowbite.com/docs/components/typography/
       </h1>
     </header>
     <p class="lead">{{post.body}}</p>
-    <!-- edit button -->
-    <div class="py-6">
+    <!-- CRUD button -->
+    <div class="block py-6">
       <a
         href="/article/edit/{{post.id}}"
         class="relative z-10 rounded-full bg-green-200 px-2 py-2 font-medium text-gray-600 hover:bg-green-300"
         >Edit</a
+      >
+      <a
+        href="/article/{{post.id}}/remove"
+        class="relative z-10 rounded-full bg-red-200 px-2 py-2 font-medium text-gray-600 hover:bg-red-300"
+        >Delete</a
       >
     </div>
 
