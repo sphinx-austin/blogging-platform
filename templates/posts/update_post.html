@@ -1,0 +1,28 @@
+<!-- templates/index.html -->
+
+<!-- Content here -->
+{% extends "_base.html" %}
+<!-- sp -->
+{% block content %}
+
+<!-- FORM -->
+<section class="bg-white dark:bg-gray-900">
+  <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+    <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">
+      Edit blog post
+    </h2>
+    <form action="#" method="post">
+      {% csrf_token %}
+      <!-- class -->
+      {{ form.as_p }}
+
+      <button
+        type="submit"
+        class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-green-700 rounded-lg focus:ring-4 focus:ring-green-200 dark:focus:ring-green-900 hover:bg-green-800"
+      >
+        Update post
+      </button>
+    </form>
+  </div>
+</section>
+{% endblock %}
