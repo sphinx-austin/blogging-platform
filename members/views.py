@@ -9,3 +9,8 @@ class UserRegisterView(generic.CreateView):
     form_class = UserCreationForm
     template_name = 'members/registration/register.html'
     success_url = reverse_lazy('login')
+
+
+class UserLoginView(generic.CreateView):
+    form_class = UserCreationForm
+    template_name = "members/registration/login.html"
