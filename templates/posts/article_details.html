@@ -47,8 +47,9 @@ URL: https://flowbite.com/docs/components/typography/
         {{post.title}}
       </h1>
     </header>
-    <p class="lead">{{post.body}}</p>
+    <p class="lead">{{post.body|safe}}</p>
     <!-- CRUD button -->
+    {% if user.is_authenticated %}
     <div class="block py-6">
       <a
         href="/article/edit/{{post.id}}"
@@ -61,6 +62,7 @@ URL: https://flowbite.com/docs/components/typography/
         >Delete</a
       >
     </div>
+    {% endif %}
 
     <!-- Discussion -->
     <section class="not-format">
