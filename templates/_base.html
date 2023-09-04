@@ -83,7 +83,7 @@
               >
             </li>
 
-            {% if request.user.is_authenticated %}
+            {% if user.is_authenticated %}
             <li>
               <a
                 href="{% url 'add-post' %}"
@@ -104,7 +104,7 @@
                 href="#"
                 class="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 aria-current="page"
-                >Hello, {{request.user.username}}</a
+                >Hello, {{user.username}}</a
               >
             </li>
             {% else %}
