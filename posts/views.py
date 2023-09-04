@@ -18,10 +18,14 @@ class HomeView(ListView):
     #     return super().dispatch(*args, **kwargs)
 
 
-# @login_required(login_url='login')
+
 class ArticleDetailView(DetailView):
     model = Post
     template_name = 'posts/article_details.html'
+
+    # @method_decorator(login_required(login_url='login'))
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
 
 
 # @login_required(login_url='login')
@@ -32,6 +36,10 @@ class AddPostView(CreateView):
     # fields = '__all__'
     # fields = ('title', 'body')
 
+    @method_decorator(login_required(login_url='login'))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
 
 # @login_required(login_url='login')
 class UpdatePostView(UpdateView):
@@ -40,8 +48,16 @@ class UpdatePostView(UpdateView):
     template_name = 'posts/update_post.html'
     # fields = ['title', 'body']
 
+    @method_decorator(login_required(login_url='login'))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
 # @login_required(login_url='login')
 class DeletePostView(DeleteView):
     model = Post
     template_name = 'posts/delete_post.html'
     success_url = reverse_lazy('home')
+
+    @method_decorator(login_required(login_url='login'))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
