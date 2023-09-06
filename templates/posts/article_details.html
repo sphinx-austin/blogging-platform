@@ -47,7 +47,7 @@ URL: https://flowbite.com/docs/components/typography/
         {{post.title|title}}
       </h1>
     </header>
-    <p class="lead">{{post.body|linebreaks}}</p>
+    <p class="lead">{{post.body|linebreaks|urlize}}</p>
     <!-- CRUD button -->
     {% if user.is_authenticated %}
     <div class="block py-6">
