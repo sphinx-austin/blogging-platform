@@ -44,10 +44,10 @@ URL: https://flowbite.com/docs/components/typography/
       <h1
         class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white"
       >
-        {{post.title}}
+        {{post.title|title}}
       </h1>
     </header>
-    <p class="lead">{{post.body|safe}}</p>
+    <p class="lead">{{post.body|linebreaks}}</p>
     <!-- CRUD button -->
     {% if user.is_authenticated %}
     <div class="block py-6">
@@ -61,6 +61,9 @@ URL: https://flowbite.com/docs/components/typography/
         class="relative z-10 rounded-full bg-red-200 px-2 py-2 font-medium text-gray-600 hover:bg-red-300"
         >Delete</a
       >
+    </div>
+    <div class="py-3">
+      <strong>Word count: {{post.body|wordcount}}</strong>
     </div>
     {% endif %}
 
